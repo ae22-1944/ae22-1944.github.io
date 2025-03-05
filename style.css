@@ -1,0 +1,32 @@
+/* Estilos personalizados */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar-brand img {
+  margin-right: 10px;
+}
+
+.carousel-item img {
+  border-radius: 10px;
+}
+
+.list-group-item:hover {
+  background-color: #f8f9fa;
+  cursor: pointer;
+}
+
+/* Modo Oscuro */
+.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-mode .navbar-dark {
+  background-color: #222 !important;
+}
+
+.dark-mode .list-group-item {
+  background-color: #444;
+  color: #fff;
+}
