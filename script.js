@@ -1,25 +1,21 @@
-// Activar/Desactivar Modo Oscuro
-function toggleDarkMode() {
-  document.body.classList.toggle('dark-mode');
-}
+document.addEventListener('DOMContentLoaded', () => {
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = document.getElementById('themeIcon');
+  const body = document.body;
 
-// Efecto hover con jQuery
-$(document).ready(function () {
-  $('.list-group-item').hover(
-    function () {
-      $(this).css('background-color', '#e9ecef');
-    },
-    function () {
-      $(this).css('background-color', '');
-    },
-  );
+  if (localStorage.getItem('dark-mode') === 'enabled') {
+    body.classList.add('dark-mode');
+    themeIcon.classList.replace('bi-moon', 'bi-sun');
+  }
+
+  themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    if (body.classList.contains('dark-mode')) {
+      localStorage.setItem('dark-mode', 'enabled');
+      themeIcon.classList.replace('bi-moon', 'bi-sun');
+    } else {
+      localStorage.setItem('dark-mode', 'disabled');
+      themeIcon.classList.replace('bi-sun', 'bi-moon');
+    }
+  });
 });
-
-// Alertas y Modales
-function showAlert() {
-  alert('¡Este es un mensaje de alerta!');
-}
-
-function showModal() {
-  $('#exampleModal').modal('show');
-}
