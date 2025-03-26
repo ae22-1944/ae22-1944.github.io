@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -6,8 +7,8 @@
     <meta name="description" content="Curso de guitarra para principiantes" />
     <meta name="keywords" content="musica, guitarra, instrumentos" />
     <meta name="author" content="Adán Estévez" />
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
-    <title>Aprende Guitarra</title>
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon" />
+    <title>Aprende Guitarra - Blog</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -20,7 +21,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
@@ -28,7 +29,7 @@
         <div class="d-flex w-100 justify-content-between align-items-center">
           <a class="navbar-brand" href="https://ae22-1944.github.io">
             <img
-              src="assets/logo.png"
+              src="{% static 'logo.png' %}"
               alt="Logo"
               width="30"
               height="30"
@@ -60,13 +61,13 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav align-items-center">
             <li class="nav-item">
-              <a class="nav-link text-nowrap" aria-current="page" href="index.html">Inicio</a>
+              <a class="nav-link text-nowrap" aria-current="page" href="{% url 'home' %}">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-nowrap active" href="blog.html">Blog</a>
+              <a class="nav-link text-nowrap active" href="{% url 'blog' %}">Blog</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-nowrap" href="contacto.html">Contacto</a>
+              <a class="nav-link text-nowrap" href="{% url 'contacto' %}">Contacto</a>
             </li>
           </ul>
         </div>
@@ -90,7 +91,7 @@
                   Descubre cómo la guitarra se ha transformado a lo largo de los siglos.
                 </p>
                 <div class="d-flex justify-content-between align-items-center">
-                  <a href="blog/historia.html" class="btn btn-primary">Leer más</a>
+                  <a href="{% url 'historia' %}" class="btn btn-primary">Leer más</a>
                   <small class="text-muted">12 de febrero de 2023</small>
                 </div>
               </div>
@@ -112,7 +113,7 @@
                   Conoce consejos prácticos para mejorar tu habilidad con la guitarra.
                 </p>
                 <div class="d-flex justify-content-between align-items-center">
-                  <a href="blog/consejos.html" class="btn btn-primary">Leer más</a>
+                  <a href="{% url 'consejos' %}" class="btn btn-primary">Leer más</a>
                   <small class="text-muted">3 de agosto de 2022</small>
                 </div>
               </div>
@@ -132,7 +133,7 @@
                   Explora los distintos tipos de guitarras y para qué se usan cada una.
                 </p>
                 <div class="d-flex justify-content-between align-items-center">
-                  <a href="blog/tipos.html" class="btn btn-primary">Leer más</a>
+                  <a href="{% url 'tipos' %}" class="btn btn-primary">Leer más</a>
                   <small class="text-muted">27 de noviembre de 2022</small>
                 </div>
               </div>
@@ -152,7 +153,7 @@
                   Descubre curiosidades fascinantes sobre el mundo de la guitarra.
                 </p>
                 <div class="d-flex justify-content-between align-items-center">
-                  <a href="blog/curiosidades.html" class="btn btn-primary">Leer más</a>
+                  <a href="{% url 'curiosidades' %}" class="btn btn-primary">Leer más</a>
                   <small class="text-muted">5 de abril de 2023</small>
                 </div>
               </div>
@@ -174,7 +175,7 @@
                   Aprende cómo mejorar tu digitación para tocar mejor y más rápido.
                 </p>
                 <div class="d-flex justify-content-between align-items-center">
-                  <a href="blog/digitacion.html" class="btn btn-primary">Leer más</a>
+                  <a href="{% url 'digitacion' %}" class="btn btn-primary">Leer más</a>
                   <small class="text-muted">19 de enero de 2024</small>
                 </div>
               </div>
@@ -199,6 +200,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="script.js"></script>
+    <script src="{% static 'script.js' %}"></script>
   </body>
 </html>
